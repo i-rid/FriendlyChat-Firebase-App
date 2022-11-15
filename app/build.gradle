@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+
+repositories {
+    mavenLocal()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "24.0.3"
+
+    viewBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.google.firebase.udacity.friendlychat"
+        minSdk 19
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        resConfigs "en"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:24.2.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:24.2.0'
+
+    // Displaying images
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-analytics'
+    
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+
+    //auth
+    implementation 'com.google.firebase:firebase-auth:21.0.7'
+    //firebase ui
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
+    //firebase storage
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
+    //firebase notification
+    implementation 'com.google.firebase:firebase-messaging:23.0.7'
+    //firebase remote config
+    implementation 'com.google.firebase:firebase-config:21.1.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
+}
+apply plugin: 'com.google.gms.google-services'
