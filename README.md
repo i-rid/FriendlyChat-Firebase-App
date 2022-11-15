@@ -1,7 +1,16 @@
-# FriendlyChat-Firebase-App
-Login                            |  Texting Interface
-:------------------------------:|:------------------------------:
- ![](screenshot/1.jpg) | ![](screenshot/2.jpg)
+# Friendly Chat App Using Firebase
+# 📷 Screenshots
+
+<table style="width:100%">
+  <tr>
+    <th>Login</th>
+    <th>Texting Interface</th>
+  </tr>
+  <tr>
+    <td><img src = "screenshot/1.jpg" width=240/></td> 
+    <td><img src = "screenshot/2.jpg" width=240/></td>
+  </tr>
+</table>
 
 
 Why does this exist?
